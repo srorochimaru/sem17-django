@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cliente</title>
+    <!-- Agregar un poco de estilo al html -->
+    <style>
+        h1 {
+            color: blue;
+            font-family: Arial;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Lista de Cliente</h1>
+    <table border="1" align="center">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Tipo</th>
+            <th>Dirección</th>
+        </tr>
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente.id }}</td>
+            <!-- Usar los nombres de los atributos que definiste en el modelo de Cliente -->
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.apellido }}</td>
+            <td>{{ cliente.tipo }}</td>
+            <td>{{ cliente.direccion }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
